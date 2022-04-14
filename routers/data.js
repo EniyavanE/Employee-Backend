@@ -1,7 +1,7 @@
 const express = require('express');
 
 const router = express.Router();
-const DataOne=require("../modules/dataOne")
+const DataOne=require("../modules/dataone")
 
 router.get('/', async(req,res)=>{
     

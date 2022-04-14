@@ -20,6 +20,9 @@ const dataSchema = new mongoose.Schema({
   },
   location:{
       type:String
+  },
+  pic:{
+      type:String
   }
 })
 module.exports = mongoose.model('DataOne',dataSchema, "employees");

@@ -1,28 +1,28 @@
 const express = require('express');
 
 const router = express.Router();
-const DataOne=require("../modules/dataone")
-const ObjectId=require('mongodb').ObjectId;
+const DataOne=require("../modules/dataOne")
+
 router.get('/', async(req,res)=>{
-  console.log("print")
-  // const myId=JSON.parse(req.params.id);
+    
     const ans= await DataOne.find();
-    console.log(ans);
+  
   res.send(ans);
   
     
 })
 
 router.post('/',async (req,res)=>{
-  console.log("finally we made it");
-    JSON.stringify(DataOne)
+  
+    
     const val =new DataOne({
         name:req.body.Name,
         mobile:req.body.Num,
         email:req.body.Email,
         dob:req.body.Dob,
         jobtype:req.body.Jobtype,
-        location:req.body.Location
+        location:req.body.Location,
+        pic:req.body.Pic
     })
     await val.save();
    res.send(val)
@@ -38,7 +38,9 @@ router.delete('/:id',async(req,res)=>{
       email:req.body.Email,
       dob:req.body.Dob,
       jobtype:req.body.Jobtype,
-      location:req.body.Location});
+      location:req.body.Location,
+      pic:req.body.Pic
+    });
       
      res.send(updateEmp);
   })

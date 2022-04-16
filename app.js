@@ -2,9 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const cors = require("cors");
+require('dotenv').config()
 
 app.use(cors());
-const url = 'mongodb://127.0.0.1:27017/employesdb'
+const url = process.env.MONGO_DB_CON_STRING;
 let db;
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }).then(x => {

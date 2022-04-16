@@ -19,4 +19,4 @@ app.use(express.text({ limit: '200mb' }))
 
 const dataRouter = require('./routers/data')
 app.use('/data', dataRouter);
-app.listen(5000, () => { console.log("connected") });
+app.listen(process.env.PORT || 5000, () => { console.log("connected") });

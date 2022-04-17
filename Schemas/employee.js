@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const dataSchema = new mongoose.Schema({
+const employeeSchema = new mongoose.Schema({
     name: {
         type: String,
     },
@@ -25,4 +25,4 @@ const dataSchema = new mongoose.Schema({
         type: String
     }
 })
-module.exports = mongoose.model('DataOne', dataSchema, "employees");
+module.exports = mongoose.model('Employee', employeeSchema, "employees");

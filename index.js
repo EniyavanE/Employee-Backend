@@ -6,12 +6,13 @@ import productRouter from "./Routes/productRoutes.js";
 import userRouter from "./Routes/userRoutes.js";
 import orderRouter from "./Routes/orderRoutes.js";
 import cookieParser from "cookie-parser";
+import fetch from 'node-fetch';
 dotenv.config();
 const app = express();
 connectDb();
 app.use(
     cors({
-        origin: [process.env.FE_URL],
+        origin: ["https://main--superlative-cocada-0b1301.netlify.app"],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const port = process.env.PORT;
+
 app.get('/proxy', async (req, res) => {
     try {
         // Fetch data from the desired endpoint
